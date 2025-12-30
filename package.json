@@ -1,0 +1,15 @@
+{
+  "name": "micro-qiankun",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "pnpm install",
+    "dev:all": "concurrently \"pnpm --filter hostapp dev\" \"pnpm --filter subapp1 dev\" \"pnpm --filter subapp2 dev\" \"pnpm --filter subapp3 dev\" \"pnpm --filter subapp4 serve\"",
+    "build:all": "pnpm --filter hostapp build && pnpm --filter subapp1 build && pnpm --filter subapp2 build && pnpm --filter subapp3 build && pnpm --filter subapp4 build",
+    "start": "pnpm dev:all"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "^5.3.3"
+  }
+}
